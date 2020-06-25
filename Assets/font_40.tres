@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Oswald-VariableFont_wght.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 40
+outline_color = Color( 0.156863, 0.243137, 0.243137, 1 )
+font_data = ExtResource( 1 )
