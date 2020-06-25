@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Assets/HandBackground.png" type="Texture" id=1]
+[ext_resource path="res://Assets/CluesEyes.png" type="Texture" id=2]
+[ext_resource path="res://Assets/CluesNoseMouth.png" type="Texture" id=3]
+[ext_resource path="res://Assets/CluesHair.png" type="Texture" id=4]
+[ext_resource path="res://Assets/CluesBody.png" type="Texture" id=5]
+[ext_resource path="res://Assets/CluesHead.png" type="Texture" id=6]
+[ext_resource path="res://Assets/CluesColor.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Wrong.png" type="Texture" id=8]
+[ext_resource path="res://SourceCode/Clues.gd" type="Script" id=9]
+[ext_resource path="res://Assets/HandFinger.png" type="Texture" id=10]
+
+[node name="Clues" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -460.0
+margin_top = -970.0
+margin_right = 620.0
+margin_bottom = 950.0
+mouse_filter = 2
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HandFinger" type="Sprite" parent="."]
+position = Vector2( 80, -10 )
+texture = ExtResource( 10 )
+
+[node name="CluesColor" type="Sprite" parent="."]
+position = Vector2( -150, -130 )
+texture = ExtResource( 7 )
+
+[node name="CluesHead" type="Sprite" parent="."]
+position = Vector2( -151, 104 )
+texture = ExtResource( 6 )
+hframes = 4
+
+[node name="CluesBody" type="Sprite" parent="."]
+position = Vector2( -150, 340 )
+texture = ExtResource( 5 )
+hframes = 4
+frame = 1
+
+[node name="CluesEyes" type="Sprite" parent="."]
+position = Vector2( 160, -150 )
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="CluesNoseMouth" type="Sprite" parent="."]
+position = Vector2( 150, 90 )
+texture = ExtResource( 3 )
+hframes = 4
+
+[node name="CluesHair" type="Sprite" parent="."]
+position = Vector2( 160, 330 )
+texture = ExtResource( 4 )
+hframes = 4
+
+[node name="Wrong0" type="Sprite" parent="."]
+position = Vector2( -150, -130 )
+texture = ExtResource( 8 )
+
+[node name="Wrong1" type="Sprite" parent="."]
+position = Vector2( -150, 100 )
+texture = ExtResource( 8 )
+
+[node name="Wrong2" type="Sprite" parent="."]
+position = Vector2( -150, 340 )
+texture = ExtResource( 8 )
+
+[node name="Wrong3" type="Sprite" parent="."]
+position = Vector2( 160, -140 )
+texture = ExtResource( 8 )
+
+[node name="Wrong4" type="Sprite" parent="."]
+position = Vector2( 150, 90 )
+texture = ExtResource( 8 )
+
+[node name="Wrong5" type="Sprite" parent="."]
+position = Vector2( 160, 330 )
+texture = ExtResource( 8 )

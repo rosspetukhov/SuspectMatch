@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Button_theme.tres" type="Theme" id=1]
+[ext_resource path="res://SourceCode/TitleScreen.gd" type="Script" id=2]
+[ext_resource path="res://Assets/font_40.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/ComputerBackground.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Click.wav" type="AudioStream" id=9]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1080.0
+margin_bottom = 1920.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1080.0
+margin_bottom = 1920.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 540, 960 )
+current = true
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="NewGame" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 300.0
+margin_right = 880.0
+margin_bottom = 460.0
+rect_pivot_offset = Vector2( 360, 40 )
+focus_mode = 0
+theme = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "New Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HowToPlay" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 540.0
+margin_right = 880.0
+margin_bottom = 700.0
+rect_pivot_offset = Vector2( 360, 40 )
+focus_mode = 0
+theme = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "How To Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Consent" type="Label" parent="."]
+margin_left = 200.0
+margin_top = 210.0
+margin_right = 880.0
+margin_bottom = 595.0
+custom_fonts/font = ExtResource( 3 )
+text = "This app is free by showing Google ads. Google will collect data and use a unique identifier on your device to show you ads. The app's privacy policy is available on Google Play."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Accept" type="Button" parent="Consent"]
+margin_top = 380.0
+margin_right = 680.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( 360, 40 )
+focus_mode = 0
+theme = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameRules" type="Label" parent="."]
+visible = false
+margin_left = 200.0
+margin_top = 210.0
+margin_right = 880.0
+margin_bottom = 595.0
+custom_fonts/font = ExtResource( 3 )
+text = "Use clues in your notepad to find a criminal before you run out of time.
+Swipe left to see next suspect, swipe right to detain a suspect. 
+There is one criminal in each round. "
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="GameRules"]
+margin_top = 380.0
+margin_right = 680.0
+margin_bottom = 540.0
+rect_pivot_offset = Vector2( 360, 40 )
+focus_mode = 0
+theme = ExtResource( 1 )
+enabled_focus_mode = 0
+text = "Ok"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="HowToPlay" to="." method="_on_HowToPlay_pressed"]
+[connection signal="pressed" from="Consent/Accept" to="." method="_on_Accept_pressed"]
+[connection signal="pressed" from="GameRules/Back" to="." method="_on_Back_pressed"]
